@@ -1,0 +1,23 @@
+<div *ngIf="client">
+
+  <h1 id="tableLabel">Adaugă clienti</h1>
+  <br />
+
+  <b>Nume:</b>
+  <br />
+  <input [(ngModel)]="client.nume" />
+  <br />
+  <br />
+<b>Prenume:</b>
+  <br />
+  <input [(ngModel)]="client.prenume" />
+  <br />
+  <br />
+<b>Locatia:</b>
+  <br />
+  <input [(ngModel)]="client.locatia" />
+  <br />
+  <br />
+  <button class="btn btn-primary" (click)="saveClient()">Save Client</button>
+
+</div>

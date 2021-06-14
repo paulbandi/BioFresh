@@ -1,0 +1,26 @@
+<h1 id="tableLabel">Comenzi</h1>
+
+<button class="btn btn-primary" [routerLink]="['/comanda-add']">Adaugă comenzi</button>
+<br />
+<br />
+<p *ngIf="!comenzi"><em>Loading...</em></p>
+
+<table class='table table-striped' aria-labelledby="tableLabel" *ngIf="comenzi">
+  <thead>
+    <tr>
+      <th>Timp De Livrare (mins)</th>
+      <th>Date De Contact</th>
+      <th>Pret Total</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let comanda of comenzi">
+      <td>{{ comanda.timpDeLivrare }}</td>
+      <td>{{ comanda.dateDeContact }}</td>
+      <td>{{ comanda.pretTotal }}</td>
+      <td><button class="btn btn-primary" (click)="deleteComanda(comanda)">delete</button></td>
+      <td><a href="/comanda-update?id={{comanda.id}}" class="btn btn-primary">update</a></td>
+    </tr>
+  </tbody>
+</table>

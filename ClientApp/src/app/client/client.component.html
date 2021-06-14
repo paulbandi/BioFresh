@@ -1,0 +1,27 @@
+<h1 id="tableLabel">Clienți</h1>
+
+<button class="btn btn-primary" [routerLink]="['/client-add']">Adaugă clienți</button>
+<br />
+<br />
+
+<p *ngIf="!clienti"><em>Loading...</em></p>
+
+<table class='table table-striped' aria-labelledby="tableLabel" *ngIf="clienti">
+  <thead>
+    <tr>
+      <th>Nume</th>
+      <th>Prenume</th>
+      <th>Locația</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let client of clienti">
+      <td>{{ client.nume }}</td>
+      <td>{{ client.prenume }}</td>
+      <td>{{ client.locatia }}</td>
+      <td><button class="btn btn-primary" (click)="deleteClient(client)">delete</button></td>
+      <td><a href="/client-update?id={{client.id}}" class="btn btn-primary">update</a></td>
+    </tr>
+  </tbody>
+</table>

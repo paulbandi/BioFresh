@@ -1,0 +1,18 @@
+<div *ngIf="livrare">
+
+  <h1 id="tableLabel">Adaugă livrare</h1>
+
+<b>Ridicare comanda</b>
+  <br />
+  <input [(ngModel)]="livrare.ridicareComanda" />
+  <br />
+  <br />
+<b>Livrare comanda</b>
+  <br />
+  <input [(ngModel)]="livrare.livrareComanda" />
+  <br />
+  <br />
+
+  <button class="btn btn-primary" (click)="saveLivrare()">Save Livrare</button>
+
+</div>

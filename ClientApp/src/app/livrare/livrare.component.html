@@ -1,0 +1,25 @@
+<h1 id="tableLabel">Livrări</h1>
+
+<button class="btn btn-primary" [routerLink]="['/livrare-add']">Adaugă livrare</button>
+<br />
+<br />
+
+<p *ngIf="!livrari"><em>Loading...</em></p>
+
+<table class='table table-striped' aria-labelledby="tableLabel" *ngIf="livrari">
+  <thead>
+    <tr>
+      <th>Ridicare Comanda</th>
+      <th>Livrare Comanda</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let livrare of livrari">
+      <td>{{ livrare.ridicareComanda }}</td>
+      <td>{{ livrare.livrareComanda }}</td>
+      <td><button class="btn btn-primary" (click)="deleteLivrare(livrare)">delete</button></td>
+      <td><a href="/livrare-update?id={{livrare.id}}" class="btn btn-primary">update</a></td>
+    </tr>
+  </tbody>
+</table>

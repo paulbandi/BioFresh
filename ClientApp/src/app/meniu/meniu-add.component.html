@@ -1,0 +1,28 @@
+<div *ngIf="meniu">
+
+  <h1 id="tableLabel">Adaugă meniuri</h1>
+ <br />
+
+  <b>Nume:</b>
+  <br />
+  <input [(ngModel)]="meniu.nume" />
+  <br />
+  <br />
+  <b>Descriere:</b>
+  <br />
+  <input [(ngModel)]="meniu.descriere" />
+  <br />
+  <br />
+ <b>Calorii:</b>
+  <br />
+  <input [(ngModel)]="meniu.calorii" />
+  <br />
+  <br />
+<b>Pret:</b>
+  <br />
+  <input [(ngModel)]="meniu.pret" />
+  <br />
+  <br />
+  <button class="btn btn-primary" (click)="saveMeniu()">Save Meniu</button>
+
+</div>

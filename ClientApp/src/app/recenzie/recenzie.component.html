@@ -1,0 +1,29 @@
+<h1 id="tableLabel">Recenzii</h1>
+
+<button class="btn btn-primary" [routerLink]="['/recenzie-add']">Adaugă recenzie</button>
+<br />
+<br />
+
+<p *ngIf="!recenzii"><em>Loading...</em></p>
+
+<table class='table table-striped' aria-labelledby="tableLabel" *ngIf="recenzii">
+  <thead>
+    <tr>
+      <th>Nume</th>
+      <th>Data</th>
+      <th>Notiță</th>
+      <th>Stele</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let recenzie of recenzii">
+      <td>{{ recenzie.nume }}</td>
+      <td>{{ recenzie.data }}</td>
+      <td>{{ recenzie.notita }}</td>
+      <td>{{ recenzie.stele }}</td>
+      <td><button class="btn btn-primary" (click)="deleteRecenzie(recenzie)">delete</button></td>
+      <td><a href="/recenzie-update?id={{recenzie.id}}" class="btn btn-primary">update</a></td>
+    </tr>
+  </tbody>
+</table>

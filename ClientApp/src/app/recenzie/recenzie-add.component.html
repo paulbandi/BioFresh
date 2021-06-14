@@ -1,0 +1,28 @@
+<div *ngIf="recenzie">
+
+  <h1 id="tableLabel">Adaugă recenzie</h1>
+
+<b>Nume:</b>
+  <br />
+  <input [(ngModel)]="recenzie.nume" />
+  <br />
+  <br />
+<b>Data:</b>
+  <br />
+  <input [(ngModel)]="recenzie.data" />
+  <br />
+  <br />
+<b>Notiță:</b>
+  <br />
+  <input [(ngModel)]="recenzie.notita" />
+  <br />
+  <br />
+<b>Stele:</b>
+  <br />
+  <input [(ngModel)]="recenzie.stele" />
+  <br />
+  <br />
+
+  <button class="btn btn-primary" (click)="saveRecenzie()">Save Recenzie</button>
+
+</div>

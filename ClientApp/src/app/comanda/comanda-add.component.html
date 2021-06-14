@@ -1,0 +1,23 @@
+<div *ngIf="comanda">
+
+  <h1 id="tableLabel">Adaugă comandă</h1>
+
+<b>Timp de Livrare:</b>
+  <br />
+  <input [(ngModel)]="comanda.timpDeLivrare" />
+  <br />
+  <br />
+<b>Date de Contact:</b>
+  <br />
+  <input [(ngModel)]="comanda.dateDeContact" />
+  <br />
+  <br />
+<b>Pret total:</b>
+  <br />
+  <input [(ngModel)]="comanda.pretTotal" />
+  <br />
+  <br />
+
+  <button class="btn btn-primary" (click)="saveComanda()">Save Comanda</button>
+
+</div>

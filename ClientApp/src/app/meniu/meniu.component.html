@@ -1,0 +1,28 @@
+<h1 id="tableLabel">Meniuri</h1>
+
+<button class="btn btn-primary" [routerLink]="['/meniu-add']">Adaugă meniuri</button>
+<br />
+<br />
+
+<p *ngIf="!meniuri"><em>Loading...</em></p>
+
+<table class='table table-striped' aria-labelledby="tableLabel" *ngIf="meniuri">
+  <thead>
+    <tr>
+      <th>Nume</th>
+      <th>Descriere</th>
+      <th>Calorii</th>
+      <th>Pret</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let meniu of meniuri">
+      <td>{{ meniu.nume }}</td>
+      <td>{{ meniu.descriere }}</td>
+      <td>{{ meniu.calorii }}</td>
+      <td>{{ meniu.pret }}</td>
+      <td><button class="btn btn-primary" (click)="deleteMeniu(meniu)">delete</button></td>
+      <td><a href="/meniu-update?id={{meniu.id}}" class="btn btn-primary">update</a></td>
+    </tr>
+  </tbody>
+</table>
